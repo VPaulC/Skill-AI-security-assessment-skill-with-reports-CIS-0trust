@@ -1,0 +1,142 @@
+{
+ "value": [
+  {
+   "displayName": "CA01 All users MFA",
+   "state": "enabled",
+   "conditions": {
+    "users": {
+     "includeUsers": [
+      "All"
+     ],
+     "includeRoles": []
+    },
+    "applications": {
+     "includeApplications": [
+      "All"
+     ]
+    },
+    "clientAppTypes": [
+     "all"
+    ],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "authenticationFlows": null
+   },
+   "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+     "mfa"
+    ],
+    "authenticationStrength": null
+   },
+   "sessionControls": null
+  },
+  {
+   "displayName": "CA02 Admins MFA",
+   "state": "enabled",
+   "conditions": {
+    "users": {
+     "includeUsers": [],
+     "includeRoles": [
+      "62e90394-69f5-4237-9190-012177145e10",
+      "e8611ab8-c189-46e8-94e1-60213ab1f814"
+     ]
+    },
+    "applications": {
+     "includeApplications": [
+      "All"
+     ]
+    },
+    "clientAppTypes": [
+     "all"
+    ],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "authenticationFlows": null
+   },
+   "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+     "mfa"
+    ],
+    "authenticationStrength": null
+   },
+   "sessionControls": {
+    "signInFrequency": {
+     "isEnabled": true,
+     "type": "hours",
+     "value": 4
+    },
+    "persistentBrowser": {
+     "isEnabled": true,
+     "mode": "never"
+    }
+   }
+  },
+  {
+   "displayName": "CA03 Block legacy",
+   "state": "enabled",
+   "conditions": {
+    "users": {
+     "includeUsers": [
+      "All"
+     ],
+     "includeRoles": []
+    },
+    "applications": {
+     "includeApplications": [
+      "All"
+     ]
+    },
+    "clientAppTypes": [
+     "exchangeActiveSync",
+     "other"
+    ],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "authenticationFlows": null
+   },
+   "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+     "block"
+    ],
+    "authenticationStrength": null
+   },
+   "sessionControls": null
+  },
+  {
+   "displayName": "CA04 Device code block",
+   "state": "enabledForReportingButNotEnforced",
+   "conditions": {
+    "users": {
+     "includeUsers": [
+      "All"
+     ],
+     "includeRoles": []
+    },
+    "applications": {
+     "includeApplications": [
+      "All"
+     ]
+    },
+    "clientAppTypes": [
+     "all"
+    ],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "authenticationFlows": {
+     "transferMethods": "deviceCodeFlow"
+    }
+   },
+   "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+     "block"
+    ],
+    "authenticationStrength": null
+   },
+   "sessionControls": null
+  }
+ ]
+}

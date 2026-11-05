@@ -1,0 +1,6 @@
+{
+ "inboundTrust": {
+  "isMfaAccepted": false,
+  "isCompliantDeviceAccepted": false
+ }
+}

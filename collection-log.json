@@ -1,0 +1,9 @@
+{
+ "tenant": "sample",
+ "calls": {
+  "riskyUsers": {
+   "status": 403,
+   "error": "Forbidden - Entra ID P2 required"
+  }
+ }
+}

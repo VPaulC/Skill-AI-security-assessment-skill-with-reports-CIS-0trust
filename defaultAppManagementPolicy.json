@@ -1,0 +1,12 @@
+{
+ "isEnabled": true,
+ "applicationRestrictions": {
+  "passwordCredentials": [
+   {
+    "restrictionType": "passwordLifetime",
+    "maxLifetime": "P365D",
+    "state": "enabled"
+   }
+  ]
+ }
+}

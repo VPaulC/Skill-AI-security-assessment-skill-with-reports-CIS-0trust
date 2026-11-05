@@ -1,0 +1,10 @@
+{
+ "value": [
+  {
+   "displayName": "Guest review",
+   "scope": {
+    "query": "/users?$filter=(userType eq 'Guest')"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1052 @@
+{
+ "_about": "Single source of CIS mappings for analyse_findings.py and checks-catalogue.md. CIS Benchmarks and CIS Controls are (c) Center for Internet Security; titles are cited for reference only. 'verify' lists fields whose mapping has not been confirmed against the licensed benchmark PDF; they are rendered with a [verify] marker. 'secondary_refs' holds the optional Microsoft Zero Trust for Copilot cross-reference only (shown only when the user opts in).",
+ "benchmark": "CIS Microsoft 365 Foundations Benchmark v7.0.0",
+ "controls": "CIS Critical Security Controls v8.1",
+ "sections": {
+  "1": "1 Microsoft 365 admin centre",
+  "2": "2 Microsoft 365 Defender",
+  "3": "3 Microsoft Purview",
+  "4": "4 Microsoft Intune admin centre",
+  "5": "5 Microsoft Entra admin centre",
+  "6": "6 Exchange admin centre",
+  "7": "7 SharePoint admin centre",
+  "8": "8 Microsoft Teams admin centre",
+  "9": "9 Microsoft Fabric"
+ },
+ "safeguards": {
+  "2.1": {
+   "title": "Establish and maintain a software inventory",
+   "ig": "IG1"
+  },
+  "2.3": {
+   "title": "Address unauthorised software",
+   "ig": "IG1"
+  },
+  "2.5": {
+   "title": "Allowlist authorised software",
+   "ig": "IG2"
+  },
+  "3.2": {
+   "title": "Establish and maintain a data inventory",
+   "ig": "IG1"
+  },
+  "3.3": {
+   "title": "Configure data access control lists",
+   "ig": "IG1"
+  },
+  "3.4": {
+   "title": "Enforce data retention",
+   "ig": "IG1"
+  },
+  "3.7": {
+   "title": "Establish and maintain a data classification scheme",
+   "ig": "IG2"
+  },
+  "3.13": {
+   "title": "Deploy a data loss prevention solution",
+   "ig": "IG3"
+  },
+  "3.14": {
+   "title": "Log sensitive data access",
+   "ig": "IG3"
+  },
+  "4.1": {
+   "title": "Establish and maintain a secure configuration process",
+   "ig": "IG1"
+  },
+  "4.3": {
+   "title": "Configure automatic session locking",
+   "ig": "IG1"
+  },
+  "4.8": {
+   "title": "Uninstall or disable unnecessary services",
+   "ig": "IG2"
+  },
+  "5.3": {
+   "title": "Disable dormant accounts",
+   "ig": "IG1"
+  },
+  "5.4": {
+   "title": "Restrict administrator privileges to dedicated administrator accounts",
+   "ig": "IG1"
+  },
+  "5.5": {
+   "title": "Establish and maintain an inventory of service accounts",
+   "ig": "IG2"
+  },
+  "6.1": {
+   "title": "Establish an access granting process",
+   "ig": "IG1"
+  },
+  "6.2": {
+   "title": "Establish an access revoking process",
+   "ig": "IG1"
+  },
+  "6.3": {
+   "title": "Require MFA for externally-exposed applications",
+   "ig": "IG1"
+  },
+  "6.5": {
+   "title": "Require MFA for administrative access",
+   "ig": "IG1"
+  },
+  "6.7": {
+   "title": "Centralise access control",
+   "ig": "IG2"
+  },
+  "8.2": {
+   "title": "Collect audit logs",
+   "ig": "IG1"
+  },
+  "8.11": {
+   "title": "Conduct audit log reviews",
+   "ig": "IG2"
+  },
+  "12.2": {
+   "title": "Establish and maintain a secure network architecture",
+   "ig": "IG2"
+  },
+  "13.1": {
+   "title": "Centralise security event alerting",
+   "ig": "IG2"
+  },
+  "9.3": {
+   "title": "Maintain and enforce network-based URL filters",
+   "ig": "IG2"
+  }
+ },
+ "checks": {
+  "ENT-SD-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "6.3",
+   "verify": [
+    "cis_m365_id"
+   ],
+   "secondary_refs": "ZT Copilot Identity"
+  },
+  "ENT-CA-01": {
+   "cis_m365_id": "5.2.2.2",
+   "cis_title": "Ensure multifactor authentication is enabled for all users",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-CA-02": {
+   "cis_m365_id": "5.2.2.1",
+   "cis_title": "Ensure multifactor authentication is enabled for all users in administrative roles",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.5",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-CA-03": {
+   "cis_m365_id": "5.2.2.3",
+   "cis_title": "Enable Conditional Access policies to block legacy authentication",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.8",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-04": {
+   "cis_m365_id": "5.2.2.9",
+   "cis_title": "Ensure a managed device is required for authentication",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Devices"
+  },
+  "ENT-CA-05": {
+   "cis_m365_id": "5.2.2.7",
+   "cis_title": "Enable Identity Protection sign-in risk policies",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-CA-06": {
+   "cis_m365_id": "5.2.2.6",
+   "cis_title": "Enable Identity Protection user risk policies",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-07": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "6.7",
+   "verify": [],
+   "secondary_refs": "ZT Copilot Identity"
+  },
+  "ENT-CA-08": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "4.1",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "ENT-CA-09": {
+   "cis_m365_id": "5.2.2.5",
+   "cis_title": "Ensure 'Phishing-resistant MFA strength' is required for Administrators",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.5",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-CA-10": {
+   "cis_m365_id": "5.2.2.8",
+   "cis_title": "Ensure 'sign-in risk' is blocked for medium and high risk",
+   "profile": "E5 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-11": {
+   "cis_m365_id": "5.2.2.4",
+   "cis_title": "Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-12": {
+   "cis_m365_id": "5.2.2.13",
+   "cis_title": "Ensure that periodic reauthentication is required for all users",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-13": {
+   "cis_m365_id": "5.2.2.12",
+   "cis_title": "Ensure the device code sign-in flow is blocked",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.8",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-CA-14": {
+   "cis_m365_id": "5.2.2.17",
+   "cis_title": "Ensure authentication transfer is blocked",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.8",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-AM-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "6.5",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-AM-02": {
+   "cis_m365_id": "5.2.3.5",
+   "cis_title": "Ensure weak authentication methods are disabled",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-AM-03": {
+   "cis_m365_id": "5.2.3.4",
+   "cis_title": "Ensure all member users are 'MFA capable'",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-AM-04": {
+   "cis_m365_id": "5.2.3.1",
+   "cis_title": "Ensure Microsoft Authenticator is configured to protect against MFA fatigue",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-AM-05": {
+   "cis_m365_id": "5.2.3.6",
+   "cis_title": "Ensure system-preferred multifactor authentication is enabled",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "cis_m365_id",
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-AM-06": {
+   "cis_m365_id": "5.2.3.7",
+   "cis_title": "Ensure the email OTP authentication method is disabled",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-PIM-01": {
+   "cis_m365_id": "1.1.3",
+   "cis_title": "Ensure that between two and four global admins are designated",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "1 Microsoft 365 admin centre",
+   "safeguard": "5.4",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "ENT-PIM-02": {
+   "cis_m365_id": "5.3.1",
+   "cis_title": "Ensure privileged role assignments are activated and not assigned",
+   "profile": "E5 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "5.4",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "ENT-PIM-03": {
+   "cis_m365_id": "1.1.1",
+   "cis_title": "Ensure Administrative accounts are cloud-only",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "1 Microsoft 365 admin centre",
+   "safeguard": "5.4",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-PIM-04": {
+   "cis_m365_id": "5.3.4",
+   "cis_title": "Ensure approval is required for Global Administrator role activation",
+   "profile": "E5 L1",
+   "cis_assessment": "Manual",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.1",
+   "verify": [
+    "profile",
+    "cis_assessment",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-IDP-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "13.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-WID-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "5.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Apps"
+  },
+  "ENT-DIR-01": {
+   "cis_m365_id": "5.1.2.2",
+   "cis_title": "Ensure users cannot register applications",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "2.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-DIR-02": {
+   "cis_m365_id": "5.1.3.1",
+   "cis_title": "Ensure users cannot create security groups",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-DIR-03": {
+   "cis_m365_id": "5.1.3.4",
+   "cis_title": "Ensure 'Users can create Microsoft 365 groups in Azure portals, API or PowerShell' is set to 'No'",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Copilot Oversharing"
+  },
+  "APP-CON-01": {
+   "cis_m365_id": "5.1.5.1",
+   "cis_title": "Ensure user consent to apps accessing company data on their behalf is not allowed",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "2.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Apps"
+  },
+  "APP-CON-02": {
+   "cis_m365_id": "5.1.5.2",
+   "cis_title": "Ensure the admin consent workflow is enabled",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "2.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "APP-CRED-01": {
+   "cis_m365_id": "5.1.5.3",
+   "cis_title": "Ensure password addition is blocked for applications",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "5.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "APP-CRED-02": {
+   "cis_m365_id": "5.1.5.4",
+   "cis_title": "Ensure password lifetime for applications does not exceed 180 days",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "5.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "APP-PERM-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": "ZT Apps"
+  },
+  "APP-AI-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "2.1",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "EXT-GST-01": {
+   "cis_m365_id": "5.1.6.3",
+   "cis_title": "Ensure guest user invitations are limited",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.1",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "EXT-GST-02": {
+   "cis_m365_id": "5.1.6.2",
+   "cis_title": "Ensure that guest user access is restricted",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "EXT-GST-03": {
+   "cis_m365_id": "5.1.6.1",
+   "cis_title": "Ensure that collaboration invitations are sent to allowed domains only",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "6.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "EXT-XTA-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "6.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Identity"
+  },
+  "GOV-AR-01": {
+   "cis_m365_id": "5.3.2",
+   "cis_title": "Ensure 'Access reviews' for Guest Users are configured",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "5.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "GOV-AR-02": {
+   "cis_m365_id": "5.3.3",
+   "cis_title": "Ensure 'Access reviews' for privileged roles are configured",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "5.4",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "GOV-EM-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "6.1",
+   "verify": [],
+   "secondary_refs": "ZT Identity"
+  },
+  "DATA-SP-01": {
+   "cis_m365_id": "7.2.3",
+   "cis_title": "Ensure external content sharing is restricted",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": "ZT Copilot Oversharing"
+  },
+  "DATA-SP-02": {
+   "cis_m365_id": "7.2.7",
+   "cis_title": "Ensure link sharing is restricted in SharePoint and OneDrive",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-SP-03": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.3",
+   "verify": [
+    "cis_m365_id"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-SP-04": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": "ZT Copilot Oversharing"
+  },
+  "DATA-SP-05": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.2",
+   "verify": [],
+   "secondary_refs": "ZT Copilot Oversharing"
+  },
+  "DATA-SP-06": {
+   "cis_m365_id": "7.2.11",
+   "cis_title": "Ensure the SharePoint default sharing link permission is set",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-SP-07": {
+   "cis_m365_id": "7.2.4",
+   "cis_title": "Ensure OneDrive content sharing is restricted",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-SP-08": {
+   "cis_m365_id": "7.2.5",
+   "cis_title": "Ensure that SharePoint guest users cannot share items they don't own",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-SP-09": {
+   "cis_m365_id": "7.2.6",
+   "cis_title": "Ensure SharePoint external sharing is restricted",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "3.3",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-SP-10": {
+   "cis_m365_id": "7.2.9",
+   "cis_title": "Ensure guest access to a site or OneDrive will expire automatically",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "5.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-SP-11": {
+   "cis_m365_id": "7.2.10",
+   "cis_title": "Ensure reauthentication with verification code is restricted",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "6.3",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-SP-12": {
+   "cis_m365_id": "7.2.1",
+   "cis_title": "Ensure modern authentication for SharePoint applications is required",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "7 SharePoint admin centre",
+   "safeguard": "4.8",
+   "verify": [
+    "profile",
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-MIP-01": {
+   "cis_m365_id": "3.3.1",
+   "cis_title": "Ensure Information Protection sensitivity label policies are published",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "3 Microsoft Purview",
+   "safeguard": "3.7",
+   "verify": [],
+   "secondary_refs": "ZT Copilot Data"
+  },
+  "DATA-MIP-02": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.7",
+   "verify": [],
+   "secondary_refs": "ZT Copilot Data"
+  },
+  "DATA-DLP-01": {
+   "cis_m365_id": "3.2.1",
+   "cis_title": "Ensure DLP policies are enabled",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "3 Microsoft Purview",
+   "safeguard": "3.13",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-DLP-02": {
+   "cis_m365_id": "3.2.3",
+   "cis_title": "Ensure DLP policies are published for Copilot users",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "3 Microsoft Purview",
+   "safeguard": "3.13",
+   "verify": [
+    "cis_assessment"
+   ],
+   "secondary_refs": "ZT Copilot Data"
+  },
+  "DATA-DLP-03": {
+   "cis_m365_id": "3.2.2",
+   "cis_title": "Ensure DLP policies are enabled for Microsoft Teams",
+   "profile": "E5 L1",
+   "cis_assessment": "Automated",
+   "section": "3 Microsoft Purview",
+   "safeguard": "3.13",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-DSPM-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.14",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Copilot"
+  },
+  "DATA-AUD-01": {
+   "cis_m365_id": "3.1.1",
+   "cis_title": "Ensure Microsoft 365 audit log search is Enabled",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "3 Microsoft Purview",
+   "safeguard": "8.2",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-AUD-02": {
+   "cis_m365_id": "6.1.1",
+   "cis_title": "Ensure 'AuditDisabled' organisationally is set to 'False'",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "6 Exchange admin centre",
+   "safeguard": "8.2",
+   "verify": [
+    "profile"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-RET-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.4",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "DATA-IRM-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "13.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "DATA-CC-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "8.11",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-MDA-01": {
+   "cis_m365_id": "2.4.3",
+   "cis_title": "Ensure Microsoft Defender for Cloud Apps is enabled and configured",
+   "profile": "E5 L2",
+   "cis_assessment": "Manual",
+   "section": "2 Microsoft 365 Defender",
+   "safeguard": "2.3",
+   "verify": [
+    "cis_assessment"
+   ],
+   "secondary_refs": "ZT Apps"
+  },
+  "AI-COP-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "2.5",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "AI-COP-02": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-M365-01": {
+   "cis_m365_id": "1.3.4",
+   "cis_title": "Ensure 'User owned apps and services' is restricted",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "1 Microsoft 365 admin centre",
+   "safeguard": "2.5",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-M365-02": {
+   "cis_m365_id": "1.3.7",
+   "cis_title": "Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web'",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "1 Microsoft 365 admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-EXO-01": {
+   "cis_m365_id": "6.3.1",
+   "cis_title": "Ensure users installing Outlook add-ins is not allowed",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "6 Exchange admin centre",
+   "safeguard": "2.5",
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "AI-EXO-02": {
+   "cis_m365_id": "6.5.3",
+   "cis_title": "Ensure additional storage providers are restricted in Outlook on the web",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "6 Exchange admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-TMS-01": {
+   "cis_m365_id": "8.4.1",
+   "cis_title": "Ensure app permission policies are configured",
+   "profile": "E3 L1",
+   "cis_assessment": "Manual",
+   "section": "8 Microsoft Teams admin centre",
+   "safeguard": "2.5",
+   "verify": [
+    "cis_m365_id",
+    "profile",
+    "cis_assessment"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-TMS-02": {
+   "cis_m365_id": "8.5.9",
+   "cis_title": "Ensure meeting recording is off by default",
+   "profile": "E3 L2",
+   "cis_assessment": "Automated",
+   "section": "8 Microsoft Teams admin centre",
+   "safeguard": "3.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "AI-PP-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "3.13",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Apps"
+  },
+  "AI-AOAI-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": "12.2",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Network"
+  },
+  "SEC-SS-01": {
+   "cis_m365_id": null,
+   "cis_title": "",
+   "profile": "",
+   "cis_assessment": "",
+   "section": null,
+   "safeguard": null,
+   "verify": [],
+   "secondary_refs": ""
+  },
+  "ENT-DIR-04": {
+   "cis_m365_id": "5.1.2.3",
+   "cis_title": "Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes'",
+   "profile": "E3 L1",
+   "cis_assessment": "Automated",
+   "section": "5 Microsoft Entra admin centre",
+   "safeguard": "4.1",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  },
+  "ENT-PIM-05": {
+   "cis_m365_id": "1.1.2",
+   "cis_title": "Ensure two emergency access accounts have been defined",
+   "profile": "E3 L1",
+   "cis_assessment": "Manual",
+   "section": "1 Microsoft 365 admin centre",
+   "safeguard": "5.4",
+   "verify": [
+    "cis_assessment",
+    "safeguard"
+   ],
+   "secondary_refs": "ZT Identity"
+  },
+  "AI-DEF-01": {
+   "cis_m365_id": "2.1.1",
+   "cis_title": "Ensure Safe Links for Office Applications is Enabled",
+   "profile": "E5 L2",
+   "cis_assessment": "Automated",
+   "section": "2 Microsoft 365 Defender",
+   "safeguard": "9.3",
+   "verify": [
+    "safeguard"
+   ],
+   "secondary_refs": ""
+  }
+ }
+}

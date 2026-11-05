@@ -1,0 +1,12 @@
+[
+ {
+  "Name": "Built-In Protection Policy",
+  "IsBuiltInProtection": true,
+  "EnableSafeLinksForEmail": true,
+  "EnableSafeLinksForTeams": true,
+  "EnableSafeLinksForOffice": true,
+  "TrackClicks": true,
+  "AllowClickThrough": false,
+  "ScanUrls": true
+ }
+]

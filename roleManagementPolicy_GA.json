@@ -1,0 +1,17 @@
+{
+ "value": [
+  {
+   "policy": {
+    "rules": [
+     {
+      "id": "Approval_EndUser_Assignment",
+      "setting": {
+       "isApprovalRequired": false,
+       "approvalStages": []
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

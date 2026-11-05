@@ -1,0 +1,6 @@
+{
+ "sharingCapability": "externalUserAndGuestSharing",
+ "sharingDomainRestrictionMode": "none",
+ "isResharingByExternalUsersEnabled": true,
+ "isLegacyAuthProtocolsEnabled": true
+}

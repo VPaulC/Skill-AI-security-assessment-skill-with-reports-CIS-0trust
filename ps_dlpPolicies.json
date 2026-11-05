@@ -1,0 +1,13 @@
+[
+ {
+  "Name": "Copilot - exclude Highly Confidential",
+  "Mode": "TestWithNotifications",
+  "Workload": "Applications",
+  "Locations": "CopilotExperiences"
+ },
+ {
+  "Name": "PII baseline",
+  "Mode": "Enable",
+  "Workload": "Exchange, SharePoint, OneDriveForBusiness"
+ }
+]

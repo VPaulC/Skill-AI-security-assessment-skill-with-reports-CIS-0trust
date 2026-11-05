@@ -1,0 +1,32 @@
+{
+ "authenticationMethodConfigurations": [
+  {
+   "id": "Fido2",
+   "state": "enabled"
+  },
+  {
+   "id": "Sms",
+   "state": "enabled"
+  },
+  {
+   "id": "Voice",
+   "state": "disabled"
+  },
+  {
+   "id": "Email",
+   "state": "enabled"
+  },
+  {
+   "id": "MicrosoftAuthenticator",
+   "state": "enabled",
+   "featureSettings": {
+    "displayAppInformationRequiredState": {
+     "state": "enabled"
+    },
+    "displayLocationInformationRequiredState": {
+     "state": "default"
+    }
+   }
+  }
+ ]
+}

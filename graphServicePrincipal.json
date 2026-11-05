@@ -1,0 +1,8 @@
+{
+ "appRoles": [
+  {
+   "id": "r1",
+   "value": "Files.Read.All"
+  }
+ ]
+}

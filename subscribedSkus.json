@@ -1,0 +1,46 @@
+{
+ "value": [
+  {
+   "skuId": "s1",
+   "skuPartNumber": "SPE_E3",
+   "consumedUnits": 48,
+   "prepaidUnits": {
+    "enabled": 50,
+    "warning": 0,
+    "suspended": 0
+   },
+   "servicePlans": [
+    {
+     "servicePlanName": "AAD_PREMIUM",
+     "provisioningStatus": "Success"
+    },
+    {
+     "servicePlanName": "INTUNE_A",
+     "provisioningStatus": "Success"
+    },
+    {
+     "servicePlanName": "MIP_S_CLP1",
+     "provisioningStatus": "Success"
+    },
+    {
+     "servicePlanName": "EXCHANGE_S_ENTERPRISE",
+     "provisioningStatus": "Success"
+    }
+   ]
+  },
+  {
+   "skuId": "s2",
+   "skuPartNumber": "Microsoft_365_Copilot",
+   "consumedUnits": 10,
+   "prepaidUnits": {
+    "enabled": 10
+   },
+   "servicePlans": [
+    {
+     "servicePlanName": "M365_COPILOT",
+     "provisioningStatus": "Success"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,544 @@
+{
+ "value": [
+  {
+   "id": "u0",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u1",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u2",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u3",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u4",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u5",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u6",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u7",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u8",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u9",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u20",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u21",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u22",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u23",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u24",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u25",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u26",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u27",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u28",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u29",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u30",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u31",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u32",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u33",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u34",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u35",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u36",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u37",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u38",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u39",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u40",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u41",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u42",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u43",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u44",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u45",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u46",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "u47",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": [
+    {
+     "skuId": "s1"
+    }
+   ]
+  },
+  {
+   "id": "x0",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "x1",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "x2",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "x3",
+   "userType": "Member",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g0",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g1",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g2",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g3",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g4",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  },
+  {
+   "id": "g5",
+   "userType": "Guest",
+   "accountEnabled": true,
+   "assignedLicenses": []
+  }
+ ]
+}
