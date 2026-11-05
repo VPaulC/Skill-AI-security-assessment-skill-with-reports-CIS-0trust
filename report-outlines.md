@@ -64,7 +64,7 @@ Title: "Preparing <Organisation> for Wider AI Adoption — Executive Briefing"
    marked [verify] and listed in the technical report, Appendix D." 
 
 ## C. Combined PowerPoint deck (third deliverable — after both Word documents are complete)
-Built with the **pptx skill** on the bundled template `assets/brand-template.potx` (see
+Built with the **pptx skill** on the bundled template `brand-template.potx` (see
 [branding.md](branding.md) for the theme and the slide-type → layout mapping): use its masters, layouts and
 theme only. **Full deck, 20–25 slides**, covering both
 documents in detail, executive-readable, one message per slide, speaker notes carrying the detail.

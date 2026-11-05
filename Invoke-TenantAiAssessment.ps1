@@ -118,7 +118,6 @@ if ($UseBrowser) {
     Connect-MgGraph -TenantId $TenantId -Scopes $ReadOnlyScopes -UseDeviceCode -NoWelcome
 }
 $ctx = Get-MgContext
-$log.account = $ctx.Account
 $log.granted_scopes = $ctx.Scopes
 
 # ---- 2. Microsoft Graph evidence ----
