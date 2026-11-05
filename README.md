@@ -61,7 +61,15 @@ The optional collectors require the corresponding modules:
 | `-IncludeTeams` | `MicrosoftTeams` |
 | `-AzureSubscriptionId` | `Az.Accounts` and `Az.CognitiveServices` |
 
-Use Python 3 for offline analysis; `analyse_findings.py` uses the standard library. The alternative Graph collector depends on `msal` and `requests`, but see its current limitation below.
+Use Python 3 for offline analysis; `analyse_findings.py` uses the standard library. The alternative Graph collector requires `msal` and `requests` (`python -m pip install msal requests`).
+
+## Windows installer
+
+The Windows setup executable installs the skill files into a folder you choose (default: `%LOCALAPPDATA%\Programs\Tenant AI Security Assessment`) and adds Start Menu shortcuts for the README and uninstaller. It does not require administrator privileges.
+
+To download the installer, open the repository's **Actions** tab, select **Build Windows installer**, and download the installer artifact from a completed run. The workflow also builds an artifact when a `v*` tag is pushed. To build locally, install Inno Setup 6 and compile `installer\TenantAiAssessment.iss`.
+
+The installer copies the skill instructions, scripts, documentation, CIS mapping and PowerPoint template. It intentionally excludes collected tenant JSON evidence and quality-report files. It does **not** install Python, PowerShell modules, Cowork, or connect the skill to Cowork; install the required runtimes and modules separately as described above. The setup executable is unsigned, so Windows may show a publisher/SmartScreen warning.
 
 ## Quick start
 
@@ -125,10 +133,11 @@ Mark the documents **Sensitive - security assessment** and ask the user to apply
 | [licensing-map.md](licensing-map.md) | Licence requirements and advisory guidance |
 | [report-outlines.md](report-outlines.md) | Technical report, executive briefing and deck outlines |
 | [branding.md](branding.md) / [brand-template.potx](brand-template.potx) | Deck branding and layout guidance |
+| [installer/TenantAiAssessment.iss](installer/TenantAiAssessment.iss) | Inno Setup installer definition |
 
 ## Limitations and data handling
 
-**Current layout:** files are stored at the repository root. Run scripts from this directory; this README does not provide a one-click Cowork installer.
+**Current layout:** files are stored at the repository root. Run scripts from this directory. The Windows installer is a file installer, not a Cowork integration or one-click assessment runner.
 
 **Python collector:** `collect_graph.py` supports core Microsoft Graph evidence collection using interactive device-code sign-in. Optional Exchange, Purview, SharePoint, Power Platform, Teams and Azure evidence is collected only by the PowerShell script.
 
