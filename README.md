@@ -65,9 +65,13 @@ Use Python 3 for offline analysis; `analyse_findings.py` uses the standard libra
 
 ## Windows installer
 
-The Windows setup executable installs the skill files into a folder you choose (default: `%LOCALAPPDATA%\Programs\Tenant AI Security Assessment`) and adds Start Menu shortcuts for the README and uninstaller. It does not require administrator privileges.
+The [Windows setup executable](installer/Tenant-AI-Security-Assessment-Setup.exe) installs the skill files into a folder you choose (default: `%LOCALAPPDATA%\Programs\Tenant AI Security Assessment`) and adds Start Menu shortcuts for the README and uninstaller. It does not require administrator privileges. The checked-in installer is unsigned; verify its SHA-256 before running:
 
-To download the installer, open the repository's **Actions** tab, select **Build Windows installer**, and download the installer artifact from a completed run. The workflow also builds an artifact when a `v*` tag is pushed. To build locally, install Inno Setup 6 and compile `installer\TenantAiAssessment.iss`.
+```text
+571e41c863abfa7cf29f312430b3a84c85ad8efbaf763d9ccf0c532501c7da4b
+```
+
+The Actions workflow also builds an installer artifact on branch pushes, manual dispatch, and `v*` tags. To build locally, install Inno Setup 6 and compile `installer\TenantAiAssessment.iss`.
 
 The installer copies the skill instructions, scripts, documentation, CIS mapping and PowerPoint template. It intentionally excludes collected tenant JSON evidence and quality-report files. It does **not** install Python, PowerShell modules, Cowork, or connect the skill to Cowork; install the required runtimes and modules separately as described above. The setup executable is unsigned, so Windows may show a publisher/SmartScreen warning.
 
