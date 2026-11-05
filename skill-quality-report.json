@@ -1,0 +1,78 @@
+{
+  "description": "Runs a read-only security assessment of a Microsoft 365 / Entra ID tenant for\nsecure AI use (Copilot, agents, shadow AI), benchmarked against the CIS\nMicrosoft 365 Foundations Benchmark and CIS Controls v8.1. Shows the plan and\nasks consent first, then produces a technical Word report, an executive\nbriefing and a branded PowerPoint deck with CIS scores. Use when the user asks\nto \"assess my tenant for secure AI use\", \"run a CIS benchmark check before\nCopilot\", \"check if our tenant is ready for AI\", or \"audit Entra licensing\ncompliance for Copilot\". Do NOT use for making configuration changes,\npenetration testing or attack simulation, or general Copilot licensing\nquestions with no tenant to assess.\n",
+  "description_length": {
+    "detail": "706/1024 UTF-16 units",
+    "headroom_units": 318,
+    "max_units": 1024,
+    "status": "PASS",
+    "units": 706
+  },
+  "dimension_notes": {
+    "instruction_specificity": [
+      "82 workflow line(s)",
+      "has Quick Start / example block",
+      "names tools / data sources",
+      "specifies output format"
+    ],
+    "robustness": [
+      "has Guardrails section",
+      "13 guardrail-style rule(s)",
+      "handles missing-data / failure",
+      "has confirmation gate"
+    ],
+    "scope_boundaries": [
+      "has 'When NOT to Use' section",
+      "description states exclusions",
+      "focused single-domain scope"
+    ],
+    "trigger_clarity": [
+      "4 explicit trigger phrase(s)",
+      "has exclusion clause"
+    ]
+  },
+  "dimension_semantics": "advisory-only",
+  "dimensions": {
+    "instruction_specificity": 25,
+    "robustness": 25,
+    "scope_boundaries": 23,
+    "trigger_clarity": 23
+  },
+  "faithfulness": {
+    "detail": "instructs grounding / no-fabrication",
+    "status": "PASS"
+  },
+  "grade": "Excellent",
+  "improvements": [],
+  "mvb_pass": true,
+  "mvb_threshold": 80,
+  "path": "working/tenant-ai-security-assessment/SKILL.md",
+  "risk": {
+    "factors": [
+      "takes actions (autonomy / blast radius)",
+      "touches sensitive data",
+      "regulated domain",
+      "destructive operations"
+    ],
+    "launch_floor": 80,
+    "requires_behavioral": true,
+    "requires_human_review": true,
+    "tier": "high"
+  },
+  "rubric_version": "3",
+  "safety": [
+    {
+      "area": "destructive",
+      "detail": "Touches 'destructive' scope",
+      "status": "WARN"
+    }
+  ],
+  "skill_name": "tenant-ai-security-assessment",
+  "spec_conformance": {
+    "detail": "Frontmatter conforms to the AgentSkills spec.",
+    "host_extension_keys": [],
+    "non_spec_keys": [],
+    "status": "PASS"
+  },
+  "timestamp": "2026-11-05 20:53 UTC",
+  "total": 96
+}
