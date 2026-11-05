@@ -29,7 +29,7 @@ jobs:
       - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
-          name: Tenant-AI-Security-Assessment-Setup-${{ github.ref_name }}
+          name: Tenant-AI-Security-Assessment-Setup-${{ github.run_number }}
           path: installer/Output/Tenant-AI-Security-Assessment-Setup.exe
           if-no-files-found: error
           retention-days: 30
