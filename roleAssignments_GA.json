@@ -3,35 +3,35 @@
   {
    "principalId": "a0",
    "principal": {
-    "userPrincipalName": "admin0@sample.example",
+    "userPrincipalName": "admin0@example.invalid",
     "onPremisesSyncEnabled": false
    }
   },
   {
    "principalId": "a1",
    "principal": {
-    "userPrincipalName": "admin1@sample.example",
+    "userPrincipalName": "admin1@example.invalid",
     "onPremisesSyncEnabled": false
    }
   },
   {
    "principalId": "a2",
    "principal": {
-    "userPrincipalName": "admin2@sample.example",
+    "userPrincipalName": "admin2@example.invalid",
     "onPremisesSyncEnabled": false
    }
   },
   {
    "principalId": "a3",
    "principal": {
-    "userPrincipalName": "admin3@sample.example",
+    "userPrincipalName": "admin3@example.invalid",
     "onPremisesSyncEnabled": false
    }
   },
   {
    "principalId": "a4",
    "principal": {
-    "userPrincipalName": "admin4@sample.example",
+    "userPrincipalName": "admin4@example.invalid",
     "onPremisesSyncEnabled": true
    }
   }

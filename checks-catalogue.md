@@ -1,7 +1,7 @@
 # Checks Catalogue — Tenant AI Security Assessment (CIS-aligned)
 
 All checks are **read-only**. "Raw file" is the file name the collectors write under `raw/` and that
-`scripts/analyse_findings.py` reads. "Eval" = how *this skill* evaluates the check ("Auto" by the analyser;
+`analyse_findings.py` reads. "Eval" = how *this skill* evaluates the check ("Auto" by the analyser;
 "Manual" = the agent judges from PowerShell output or records *Not assessed — manual verification required*
 with the portal path). "CIS assessment" = the Automated/Manual status CIS gives the recommendation.
 

@@ -6,13 +6,13 @@ Usage:
 
 Both CIS options are REQUIRED and must come from the user's answers at launch (never assumed).
 
-Primary benchmark: CIS Microsoft 365 Foundations Benchmark (version in references/cis-mapping.json) plus
+Primary benchmark: CIS Microsoft 365 Foundations Benchmark (version in cis-mapping.json) plus
 CIS Critical Security Controls v8.1 safeguards / Implementation Groups. Every check's CIS metadata comes
-from references/cis-mapping.json (single source of truth). CIS content is (c) Center for Internet Security;
+from cis-mapping.json (single source of truth). CIS content is (c) Center for Internet Security;
 this script cites recommendation IDs and short titles only and paraphrases pass criteria.
 
 Reads JSON files written by collect_graph.py / Invoke-TenantAiAssessment.ps1 (see
-references/checks-catalogue.md). Missing evidence -> status "Not assessed" with a reason; a Pass is
+checks-catalogue.md). Missing evidence -> status "Not assessed" with a reason; a Pass is
 never inferred from missing data.
 """
 import argparse
@@ -21,7 +21,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_MAP = os.path.join(HERE, "..", "references", "cis-mapping.json")
+DEFAULT_MAP = os.path.join(HERE, "cis-mapping.json")
 
 GA_ROLE = "62e90394-69f5-4237-9190-012177145e10"
 RESTRICTED_GUEST_ROLE = "2af84b1e-32c8-42b7-82bc-daa82404023b"
@@ -987,8 +987,8 @@ def licensing(c):
           f"{len(out['skus'])} SKUs; over-assigned: {', '.join(s['sku'] for s in over) or 'none'}.", "Medium",
           "Resolve over-assigned or expiring (warning/suspended) subscriptions.", "—", "Low")
 
-    def licensed_count(cap, members):
-        subs = PLAN_MAP[cap]
+    def licensed_count(caps, members):
+        subs = [sub for cap in caps for sub in PLAN_MAP[cap]]
         n = 0
         for u in members:
             plans = [p for lic in u.get("assignedLicenses", []) for p in sku_plans.get(lic.get("skuId"), [])]
@@ -1002,9 +1002,9 @@ def licensing(c):
                                   "detail": c.reason("users_licences")})
     else:
         members = [u for u in users if u.get("accountEnabled") and u.get("userType") == "Member"]
-        p1 = licensed_count("Entra ID P1", members) + licensed_count("Entra ID P2", members)
-        p2 = licensed_count("Entra ID P2", members)
-        gov = licensed_count("Entra ID Governance", members)
+        p1 = licensed_count(["Entra ID P1", "Entra ID P2"], members)
+        p2 = licensed_count(["Entra ID P2"], members)
+        pim = licensed_count(["Entra ID P2", "Entra ID Governance"], members)
         en = enabled_ca(c.values("caPolicies"))
         rules = []
         if en is not None and any(all_users(p) for p in en):
@@ -1016,9 +1016,9 @@ def licensing(c):
         el = c.values("roleEligibility")
         if el:
             rules.append(("LIC-ENT-03", "PIM eligible assignments", len({e.get("principalId") for e in el}),
-                          p2 + gov, "Entra ID P2 / Governance"))
+                          pim, "Entra ID P2 / Governance"))
         if c.values("accessReviews"):
-            rules.append(("LIC-ENT-04", "Access reviews", None, p2 + gov, "Entra ID P2 / Governance"))
+            rules.append(("LIC-ENT-04", "Access reviews", None, pim, "Entra ID P2 / Governance"))
         if any((p.get("conditions") or {}).get("clientApplications") for p in en or []):
             rules.append(("LIC-ENT-06", "CA for workload identities", None,
                           len(out["capabilities"].get("Workload Identities Premium", [])), "Workload ID Premium"))
@@ -1179,7 +1179,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--cis-map", default=DEFAULT_MAP, help="Path to references/cis-mapping.json")
+    ap.add_argument("--cis-map", default=DEFAULT_MAP, help="Path to cis-mapping.json")
     ap.add_argument("--cis-licence-profile", required=True, choices=["E3", "E5"],
                     help="CIS profile family the USER confirmed (E5 adds E5-only recommendations). Never guess.")
     ap.add_argument("--cis-levels", required=True, choices=["L1", "L1L2"],

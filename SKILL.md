@@ -125,12 +125,12 @@ consent. Save each response into `raw/<check-file>.json` using the catalogue fil
 
 ### Step 2: Authenticate interactively (read-only scopes only)
 Preferred (runs on the user's machine): PowerShell —
-`./scripts/Invoke-TenantAiAssessment.ps1 -TenantId <id> -OutputPath <dir> [-IncludeExchange] [-IncludePurview] [-IncludeSharePoint -SharePointAdminUrl <url>] [-IncludePowerPlatform] [-IncludeTeams] [-AzureSubscriptionId <id>] [-UseBrowser]`.
+`./Invoke-TenantAiAssessment.ps1 -TenantId <id> -OutputPath <dir> [-IncludeExchange] [-IncludePurview] [-IncludeSharePoint -SharePointAdminUrl <url>] [-IncludePowerPlatform] [-IncludeTeams] [-AzureSubscriptionId <id>] [-UseBrowser]`.
 Each `-Include*` switch is a separate sign-in and runs only after the user confirmed that module (Step 1).
 `-IncludeExchange` also reads Safe Links (CIS 2.1.1); `-IncludeTeams` connects the MicrosoftTeams module and
 runs `Get-CsTeamsMeetingPolicy` (CIS 8.5.9) — read-only.
 It calls `Connect-MgGraph -TenantId <id> -Scopes <read-only list> -UseDeviceCode` (or browser with
-`-UseBrowser`), so the **user signs in themselves**. Alternative: `python scripts/collect_graph.py --tenant <id> --out <dir>`
+`-UseBrowser`), so the **user signs in themselves**. Alternative: `python collect_graph.py --tenant <id> --out <dir>`
 (msal device-code flow).
 
 Read-only scopes requested (never request `*.ReadWrite.*`):
@@ -147,8 +147,8 @@ was granted and mark the dependent checks **Not assessed** with the reason.
 ### Step 3: Collect evidence (benign tests)
 The collectors write one JSON file per endpoint/cmdlet to `<out>/raw/` plus `collection-log.json`. The full
 check list — endpoints, cmdlets, CIS IDs, profiles, paraphrased pass criteria, licences and CIS Controls
-safeguards — is in [references/checks-catalogue.md](references/checks-catalogue.md); the machine mapping is
-[references/cis-mapping.json](references/cis-mapping.json). Areas:
+safeguards — is in [checks-catalogue.md](checks-catalogue.md); the machine mapping is
+[cis-mapping.json](cis-mapping.json). Areas:
 - **Entra ID identity** — CIS 5.2.2.x Conditional Access (MFA all users/admins, phishing-resistant admin
   strength, legacy auth, managed devices, risk policies, sign-in frequency, device code / authentication
   transfer), CIS 5.2.3.x authentication methods, CIS 1.1.x / 5.3.x privileged access, PIM approval (5.3.4), break-glass accounts
@@ -162,13 +162,13 @@ safeguards — is in [references/checks-catalogue.md](references/checks-catalogu
 - **AI app and agent governance** — CIS 2.4.3 Defender for Cloud Apps (shadow AI), 2.1.1 Safe Links, 1.3.4 / 1.3.7 / 6.3.1 /
   6.5.3 add-ins and third-party storage, 8.4.1 / 8.5.9 Teams apps and recordings; Copilot agents, web grounding,
   Power Platform DLP, Azure OpenAI exposure (Supplementary). Reference the CIS AI companion guides by name
-  (see [references/cis-benchmark.md](references/cis-benchmark.md)).
+  (see [cis-benchmark.md](cis-benchmark.md)).
 
 Settings with no read API are recorded **Not assessed — manual verification required** with the admin-centre path.
 
 ### Step 4: Analyse controls → findings.json + cis_scores.json
 Run, with the user's Step 1 answers (both CIS options are required — never guess them):
-`python scripts/analyse_findings.py --raw <out>/raw --out <out> --cis-licence-profile <E3|E5> --cis-levels <L1|L1L2>`.
+`python analyse_findings.py --raw <out>/raw --out <out> --cis-licence-profile <E3|E5> --cis-levels <L1|L1L2>`.
 It writes `findings.json` with exactly these fields per record:
 
 | Field | Values |
@@ -189,7 +189,7 @@ It writes `findings.json` with exactly these fields per record:
 
 `cis_scores.json` holds the CIS compliance scores (L1, L2 if chosen, by benchmark section), CIS Controls IG
 coverage, the full recommendation table and the remediation order (CIS L1 → L2 → Supplementary → out-of-scope /
-E5-upgrade, each by risk). Method: [references/cis-benchmark.md](references/cis-benchmark.md). Quote these
+E5-upgrade, each by risk). Method: [cis-benchmark.md](cis-benchmark.md). Quote these
 numbers; never re-tally. IG coverage counts every assessed check, L2 included, even when only L1 is scored —
 say so. `verify_items` lists every [verify] mapping; all deliverables must show them for manual checking.
 Then show the Step 0 phase chart.
@@ -201,7 +201,7 @@ If the user opted in, add the Zero Trust for Copilot reference from `secondary_r
 
 ### Step 5: Licensing analysis and tenant-wide Entra compliance
 `analyse_findings.py` also writes `licensing.json` from `subscribedSkus` and user licence assignments, using
-[references/licensing-map.md](references/licensing-map.md):
+[licensing-map.md](licensing-map.md):
 1. **Inventory** — per SKU: purchased, assigned, suspended/warning units, key service plans.
 2. **Implementable now vs upgrade** — per recommended control: *Implement now*, *Implement for licensed users
    only* or *Requires upgrade: <SKU>* (E5-profile CIS items on an E3 tenant fall here).
@@ -219,7 +219,7 @@ current Microsoft Product Terms."
 
 ### Step 6: Build the two Word documents (docx skill)
 Invoke the **`docx` skill** and give it `findings.json`, `licensing.json`, `cis_scores.json` and the outlines in
-[references/report-outlines.md](references/report-outlines.md) (sections A and B). File names (confirm with
+[report-outlines.md](report-outlines.md) (sections A and B). File names (confirm with
 the user in Step 1): `<Org>-AI-Security-Technical-Findings-<YYYY-MM-DD>.docx` and
 `<Org>-AI-Adoption-Executive-Briefing-<YYYY-MM-DD>.docx`.
 - **Technical report** — includes the **CIS benchmark summary** (scores by section and level, IG coverage,
@@ -235,11 +235,11 @@ them, ask which label — never assume one.
 ### Step 7: Build the combined PowerPoint deck (pptx skill) — after both documents are complete
 Invoke the **`pptx` skill** and build a **full 20–25-slide deck** covering both documents in detail (outline C
 in report-outlines.md), with charts for the CIS scores, findings by area and the roadmap.
-- **Branding:** use the bundled template `assets/brand-template.potx` (it has no content slides) with the
+- **Branding:** use the bundled template `brand-template.potx` (it has no content slides) with the
   slide-type → layout mapping in branding.md. The template carries no sensitivity label (see the labelling
   note in Step 6). Red/amber/green are for pass/fail status marks only; everything else uses theme colours. Never fetch the SharePoint original at run time. If the bundled template is missing or
   unreadable, **ask the user** to attach a template or approve a plain unbranded deck — never invent branding.
-  See [references/branding.md](references/branding.md).
+  See [branding.md](branding.md).
 - File name: `<Org>-AI-Security-Assessment-Deck-<YYYY-MM-DD>.pptx`. Show slide previews (Step 0).
 
 ### Step 8: Inline chat summary

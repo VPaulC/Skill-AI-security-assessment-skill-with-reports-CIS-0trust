@@ -97,12 +97,11 @@ For a user who confirmed **E3** and **L1 only**:
 python analyse_findings.py \
   --raw ./assessment/raw \
   --out ./assessment \
-  --cis-map ./cis-mapping.json \
   --cis-licence-profile E3 \
   --cis-levels L1
 ```
 
-Use `E5` and/or `L1L2` only if the user selected them. The explicit `--cis-map` is required for this repository's flat layout; the script's default targets a `references/` directory that is not present here.
+Use `E5` and/or `L1L2` only if the user selected them. The analyser defaults to the root-level `cis-mapping.json`; pass `--cis-map <path>` only when using a different mapping file.
 
 The analyser runs offline and writes the three JSON outputs. Review findings, collection failures and all `[verify]` entries before building the reports.
 
@@ -118,7 +117,7 @@ Mark the documents **Sensitive - security assessment** and ask the user to apply
 | --- | --- |
 | [SKILL.md](SKILL.md) | Skill instructions, consent workflow, authentication, reporting and guardrails |
 | [Invoke-TenantAiAssessment.ps1](Invoke-TenantAiAssessment.ps1) | Graph evidence collector with optional service collectors |
-| [collect_graph.py](collect_graph.py) | Alternative device-code Graph collector; currently limited as noted below |
+| [collect_graph.py](collect_graph.py) | Alternative device-code collector for core Microsoft Graph evidence |
 | [analyse_findings.py](analyse_findings.py) | Offline findings, licensing and CIS scoring |
 | [checks-catalogue.md](checks-catalogue.md) | Checks, evidence sources, pass criteria and mappings |
 | [cis-mapping.json](cis-mapping.json) | Machine-readable benchmark and safeguard mappings |
@@ -129,9 +128,9 @@ Mark the documents **Sensitive - security assessment** and ask the user to apply
 
 ## Limitations and data handling
 
-**Current layout:** files are stored at the repository root. Instructions elsewhere referring to `scripts/`, `references/` or `assets/` describe a packaged skill layout; use the root-level files in this checkout. This README does not provide a one-click Cowork installer.
+**Current layout:** files are stored at the repository root. Run scripts from this directory; this README does not provide a one-click Cowork installer.
 
-**Python collection limitation:** `collect_graph.py` currently sends a placeholder in its Graph `Authorization` header rather than the acquired bearer token. Do not rely on it for live evidence collection until corrected; use the PowerShell collector instead.
+**Python collector:** `collect_graph.py` supports core Microsoft Graph evidence collection using interactive device-code sign-in. Optional Exchange, Purview, SharePoint, Power Platform, Teams and Azure evidence is collected only by the PowerShell script.
 
 **Scoring:** CIS percentages cover applicable, assessed recommendations in this AI-readiness subset, not the full benchmark. `Partial` counts as not passed; `Not assessed` is excluded from the percentage and reported separately. IG coverage includes all assessed checks, including supplementary and L2 checks even when only L1 is scored. These results are not CIS certification or a declaration of full compliance.
 

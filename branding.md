@@ -1,7 +1,7 @@
 # Branding — PowerPoint deck template
 
 ## Bundled template (use this by default)
-- **File:** `assets/brand-template.potx` (12.0 MB). Built on 5 November 2026 from the user's file "branded .pptx"
+- **File:** `brand-template.potx` (12.0 MB). Built on 5 November 2026 from the user's file "branded .pptx"
   (OneDrive /Documents). Theme name **"MSFT Cloud_Industry Slide Template-16x9"**, 16:9 widescreen
   (13.333 × 7.5 in), 1 slide master, 65 layouts, 1 notes master.
 - **Cleaning done:** the one content slide (title "Microsoft Security" with a presenter name) and the document
@@ -15,12 +15,8 @@
   label metadata (`docMetadata/LabelInfo.xml`, its relationship and content-type entries) was stripped; the
   file had no MSIP_Label custom properties. The template therefore carries **no label**. Every generated deck
   and Word document must be labelled by the user — see SKILL.md Step 6/7; the skill never assumes a label.
-- **Preview:** `assets/brand-template-preview.png` — 12 representative layouts rendered from the cleaned
-  template (Title Slide 1–3, Title and Content, Two Column Bullet text, Three Column Bullet with Subtitles,
-  Title Only, Title Only - left side, Section Title 2, Content Graphic, Big Number, Closing logo slide).
-
 ## Run-time rule (always)
-1. Use `assets/brand-template.potx` in this skill folder. **Never** fetch a SharePoint/OneDrive original at
+1. Use `brand-template.potx` in this skill folder. **Never** fetch a SharePoint/OneDrive original at
    run time.
 2. If the bundled template is missing or unreadable, **ask the user** (AskUserQuestion) to attach a template
    or approve a plain unbranded deck. Never invent colours, fonts, logos or layout names.
